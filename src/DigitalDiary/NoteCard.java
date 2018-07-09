@@ -1,6 +1,7 @@
 package DigitalDiary;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -213,6 +214,8 @@ jPanel1.setVisible(false);        // TODO add your handling code here:
     private void bDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDeleteActionPerformed
       try(Connection con=mysqlConnect.connection("root", "shrey");Statement stmt=con.createStatement();){
       String query = "DELETE FROM `Scribble` WHERE Link = '"+name+"';";
+      File f= new File(name);
+      f.delete();
       stmt.executeUpdate(query);
       homeGUI.refresh();}
       catch(Exception e){

@@ -156,8 +156,9 @@ public class NotepadGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_bCancelActionPerformed
     private void save(){}
     private void bSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSaveActionPerformed
+        opentitle=lTitle.getText();
         scribbleTitle=fSubject.getText();
-        if(scribbleTitle.contains("add")){
+        if(opentitle.contains("Add")){
         Date d=new Date();
         SimpleDateFormat sdf1=new SimpleDateFormat("dd-MM-yyyy");
         SimpleDateFormat sdf2=new SimpleDateFormat("hh:mm:ss");
@@ -182,7 +183,8 @@ public class NotepadGUI extends javax.swing.JFrame {
         this.dispose();
         homeGUI.refresh();
         }catch(Exception e){
-        System.out.println("Error !!!!!!!!!!");}
+        System.out.println("Error ");
+        }
         }
         else{
         try{
@@ -202,7 +204,7 @@ public class NotepadGUI extends javax.swing.JFrame {
         this.dispose();
         homeGUI.refresh();
         }catch(Exception e){
-        System.out.println("Error !!!!!!!!!!");}
+        System.out.println("Error !!");}
         }
     }//GEN-LAST:event_bSaveActionPerformed
 
